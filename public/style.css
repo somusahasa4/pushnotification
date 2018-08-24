@@ -10,6 +10,18 @@
   z-index: 1;
 }
 
+
+@media (max-width:767px) {
+  #permission_div {
+    top: auto;
+    bottom: 10px;
+    background-color: white;
+  }
+  #permission_div .btn-primary {
+    width: 100%;
+  }
+}
+
 .product-column {
   position: relative;
   min-height: 260px;
