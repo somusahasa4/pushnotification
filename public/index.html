@@ -146,7 +146,7 @@ function sendTokenToServer(currentToken) {
 
     var key = 'AAAAQSgGuDg:APA91bGULQ5QDTZGMeMkaeU_jkbvJH409zdr-7VKr3FkG8i29iuLHb7fuPFK9xaPirI86qTxqlriUpTgMhJAbjoMX43buYHITTu_T_P5OHQfzLx6Myd7ZcP25hMpQqf8ADKCirgWVtE5INNOT5gylFcS7zYDbncPqA';
     var token = currentToken;
-    var topic = 'github';
+    var topic = 'testTopic';
     fetch('https://iid.googleapis.com/iid/v1/' + token + '/rel/topics/' + topic, {
       'method': 'POST',
       'headers': {
@@ -234,9 +234,9 @@ function clearMessages() {
   }
 }
 function updateUIForPushEnabled(currentToken) {
-  showHideDiv(tokenDivId, true);
+  /*showHideDiv(tokenDivId, true);*/
   showHideDiv(permissionDivId, false);
-  showToken(currentToken);
+  /*showToken(currentToken);*/
 }
 function updateUIForPushPermissionRequired() {
   showHideDiv(tokenDivId, false);
