@@ -142,14 +142,22 @@ function showToken(currentToken) {
 function sendTokenToServer(currentToken) {
   if (!isTokenSentToServer()) {
     console.log('Sending token to server...');
-    // TODO(developer): Send the current token to your server.
-    // const Http = new XMLHttpRequest();
-    // const url='https://jsonplaceholder.typicode.com/posts';
-    // Http.open("GET", url);
-    // Http.send();
-    // Http.onreadystatechange=(e)=>{
-    //   console.log(Http.responseText)
-    // }
+    // TODO The following needs to be hidden in the client side
+
+    var key = 'AAAAQSgGuDg:APA91bGULQ5QDTZGMeMkaeU_jkbvJH409zdr-7VKr3FkG8i29iuLHb7fuPFK9xaPirI86qTxqlriUpTgMhJAbjoMX43buYHITTu_T_P5OHQfzLx6Myd7ZcP25hMpQqf8ADKCirgWVtE5INNOT5gylFcS7zYDbncPqA';
+    var token = currentToken;
+    var topic = 'github';
+    fetch('https://iid.googleapis.com/iid/v1/' + token + '/rel/topics/' + topic, {
+      'method': 'POST',
+      'headers': {
+        'Authorization': 'key=' + key,
+        'Content-Type': 'application/json'
+      }
+    }).then(function(response) {
+      console.log(response);
+    }).catch(function(error) {
+      console.error(error);
+    })
 
     setTokenSentToServer(true);
   } else {
